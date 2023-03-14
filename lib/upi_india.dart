@@ -150,6 +150,10 @@ class UpiIndia {
     /// In response the "txnRef" that you will receive must match this value.
     required String transactionRefId,
 
+
+ /// transaction order generated from your server.
+    required String orderId,
+
     /// transactionNote provides short description of transaction.
     String? transactionNote,
 
@@ -212,6 +216,7 @@ class UpiIndia {
       'transactionNote': transactionNote,
       'amount': flexibleAmount ? '' : amount.toString(),
       'currency': currency,
+      'orderId':orderId,
       'merchantId': merchantId,
     }).then((response) {
       print("UPI_INDIA_FINAL_RESPONSE: $response");
